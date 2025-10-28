@@ -1,0 +1,10 @@
+[package]
+name = "c_c"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "hashmaps"
+path = "src/bin/hashmaps.rs"
+
+[dependencies]

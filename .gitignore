@@ -1,0 +1,6 @@
+adder/
+auto_test/
+target/
+minigrep/
+
+*.log
