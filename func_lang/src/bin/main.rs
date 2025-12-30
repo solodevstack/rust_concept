@@ -1,3 +1,4 @@
+use func_lang::prod_other_iter;
 
 #[derive(Debug, PartialEq, Copy, Clone)]
 
@@ -115,16 +116,42 @@ fn main() {
 
 sort();
 iterator_demonstration();
+iterator_sum();
+prod_other_iter();
 }
+
 fn iterator_demonstration() {
     let v1 = vec![1, 2, 3];
+    let mut  v2 = 0;
 
-    let v1_iter = v1.iter();
 
-    for val in v1_iter {
-        println!("Got: {val}");
-    }
+    let mut v1_iter = v1.iter();
+
+    // for val in v1_iter {
+    //     println!("Got: {val}");
+     
+
+    // }
+    //Note that we needed to make v1_iter mutable: Calling the next method on an iterator changes internal state that the iterator uses to keep track of where it is in the sequence. In other words, this code consumes, or uses up, the iterator. Each call to next eats up an item from the iterator. We didn’t need to make v1_iter mutable when we used a for loop, because the loop took ownership of v1_iter and made it mutable behind the scenes.
+     assert_eq!(v1_iter.next(), Some(&1));
+        assert_eq!(v1_iter.next(), Some(&2));
+        assert_eq!(v1_iter.next(), Some(&3));
+        // assert_eq!(v1_iter.next(), Some(&3));
+        assert_eq!(v1_iter.next(), None);
 }
+
+  
+    fn iterator_sum() {
+        let v1 = vec![1, 2, 3];
+
+        let v1_iter = v1.iter();
+
+        let total: i32 = v1_iter.sum();
+
+        assert_eq!(total, 6);
+        println!("Total: {total}");
+    }
+
 
 #[derive(Debug)]
    struct Rectangle {
