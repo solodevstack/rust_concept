@@ -1,6 +1,10 @@
 [package]
 name = "publish_api"
-version.workspace = true
-edition.workspace = true
+version = "0.1.0"
+edition = "2024"
+description = "My first crate (pubishing api)."
+license = "MIT OR Apache-2.0"
+#version.workspace = true
+#edition.workspace = true
 
 [dependencies]
