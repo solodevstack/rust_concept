@@ -13,6 +13,7 @@ fn main() {
     }
         v.push(6);
      let first = &v[0];
+            println!("{} is the number", first);
         for i in &mut v {
         *i += 50;
         println!("{i}");
