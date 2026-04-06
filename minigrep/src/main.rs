@@ -2,6 +2,7 @@ use std::env;
 use std::process;
 
 // added this just to fix intellisense autocomplete
+// use ripgrep::searcher::Searcher;
 extern crate minigrep;
 
 use minigrep::Config;
