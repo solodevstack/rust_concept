@@ -1,5 +1,7 @@
 
 use smart_pointers::List::{Cons, Nil};
+use smart_pointers::mybox_run;
+use smart_pointers::MyBox;
 
 //The most straightforward smart pointer is a box, whose type is written Box<T>. Boxes allow you to store data on the heap rather than the stack.
 //What remains on the stack is the pointer to the heap data.
@@ -16,11 +18,34 @@ fn main() {
     // println!("b = {b}");
     //  let list = Cons(1, Cons(2, Cons(3, Nil)));
      let list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
+
+    // let x = 5;
+    // let y = &x;
+
+    // assert_eq!(5, x);
+    // assert_eq!(5, *y);
+
+     let x = 5;
+    let y = Box::new(x);
+
+    assert_eq!(5, x);
+    assert_eq!(5, *y);
+
+    mybox_run();
+
     print_list(&list);
     
-     println!("{:?}" ,b)
+     println!("{:?}" ,b);
+
+     let m = MyBox::new(String::from("Rust"));
+    hello(&m);
 
 }
+
+fn hello(name: &str) {
+    println!("Hello, {name}!");
+}
+
 fn print_list(list: &smart_pointers::List) {
     match list {
         Cons(value, next) => {
