@@ -1,0 +1,6 @@
+[package]
+name = "ref_cell"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]

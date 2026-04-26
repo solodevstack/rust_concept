@@ -1,0 +1,8 @@
+[package]
+name = "main_file"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ref_counted = { path = "../ref_counted" }
+ref_cell = { path = "../ref_cell" }

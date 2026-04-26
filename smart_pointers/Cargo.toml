@@ -1,6 +1,7 @@
-[package]
-name = "smart_pointers"
-version.workspace = true
-edition.workspace = true
+[workspace]
+resolver = "3"
+members = ["main_file", "ref_cell", "ref_counted", "ref_cycles"]
 
-[dependencies]
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
