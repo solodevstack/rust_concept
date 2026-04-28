@@ -8,7 +8,12 @@ version = "0.1.0"
 dependencies = [
  "ref_cell",
  "ref_counted",
+ "ref_cycles",
 ]
+
+[[package]]
+name = "memory_leak"
+version = "0.1.0"
 
 [[package]]
 name = "ref_cell"

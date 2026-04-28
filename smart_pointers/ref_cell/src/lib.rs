@@ -49,6 +49,7 @@ enum List {
 }
 
 use crate::List::{Cons, Nil};
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -65,6 +66,34 @@ pub fn refcell_main() {
     println!("a after = {a:?}");
     println!("b after = {b:?}");
     println!("c after = {c:?}");
+}
+
+
+
+//Allowing Multiple Owners of Mutable Data
+
+
+#[derive(Debug)]
+enum SecList {
+    Cons(Rc<RefCell<i32>>, Rc<SecList>),
+    Nil,
+}
+use crate::SecList::{Cons as cons, Nil as nil};
+
+pub fn refcellsec_main(){
+     let value = Rc::new(RefCell::new(5));
+
+    let a = Rc::new(cons(Rc::clone(&value), Rc::new(nil)));
+
+    let b = cons(Rc::new(RefCell::new(3)), Rc::clone(&a));
+    let c = cons(Rc::new(RefCell::new(4)), Rc::clone(&a));
+
+    *value.borrow_mut() += 10;
+
+    println!("a after = {a:?}");
+    println!("b after = {b:?}");
+    println!("c after = {c:?}");
+
 }
 #[cfg(test)]
 mod tests {

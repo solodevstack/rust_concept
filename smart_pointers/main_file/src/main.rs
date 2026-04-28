@@ -63,8 +63,9 @@ fn main() {
 
     //rc
 
-    ref_counted::second_main();
-    ref_cell::refcell_main();
+    //ref_counted::second_main();
+    //ref_cell::refcell_main();
+    ref_cycles::refcycle_main();
 
 }
 

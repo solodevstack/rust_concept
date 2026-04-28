@@ -6,3 +6,4 @@ edition.workspace = true
 [dependencies]
 ref_counted = { path = "../ref_counted" }
 ref_cell = { path = "../ref_cell" }
+ref_cycles =  { path = "../ref_cycles" }

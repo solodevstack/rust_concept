@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["main_file", "ref_cell", "ref_counted", "ref_cycles"]
+members = ["main_file", "memory_leak", "ref_cell", "ref_counted", "ref_cycles"]
 
 [workspace.package]
 edition = "2021"
