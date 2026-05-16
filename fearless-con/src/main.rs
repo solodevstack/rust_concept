@@ -10,7 +10,12 @@ use std::time::Duration;
 // use crate::join::join_main;
 mod join;
 mod move_closures;
+mod tranfer_data;
 
 fn main() {
-   move_closures::move_main();
+   // move_closures::move_main();
+   // tranfer_data::tf_main();
+   // tranfer_data::multi_main();
+   tranfer_data::sec_multi();
+
 }
