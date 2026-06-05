@@ -4,18 +4,19 @@
 //Deadlocks, in which two threads are waiting for each other, preventing both threads from continuing
 //Bugs that only happen in certain situations and are hard to reproduce and fix reliably
 
-
-use std::thread;
-use std::time::Duration;
-// use crate::join::join_main;
 mod join;
 mod move_closures;
 mod tranfer_data;
+mod mutexes;
+mod atomic_ref;
 
 fn main() {
    // move_closures::move_main();
    // tranfer_data::tf_main();
    // tranfer_data::multi_main();
-   tranfer_data::sec_multi();
+   // tranfer_data::sec_multi();
+   // mutexes::single_main();
+   atomic_ref::atomic_main();
+
 
 }
