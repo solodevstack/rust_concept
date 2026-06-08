@@ -17,7 +17,7 @@ pub fn atomic_main() {
         });
         handles.push(handle);
     }
-    println!("test {:?}", handles);
+    println!("threads {:?}", handles);
 
     for handle in handles {
         handle.join().unwrap();
