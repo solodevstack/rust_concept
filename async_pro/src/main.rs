@@ -1,6 +1,7 @@
 
 
 mod hello_async;
+mod spawn_task;
 fn main() {
 
     // let url = "https://api.coindesk.com/v1/bpi/currentprice.json";
@@ -9,7 +10,9 @@ fn main() {
 
 // hello_async::run_time()
 
-hello_async::two_url();
+// hello_async::two_url();
+spawn_task::spawn_main();
+
 
 
 
