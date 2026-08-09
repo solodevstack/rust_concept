@@ -6,6 +6,7 @@ mod sending_data;
 mod yielding_runtime;
 mod build_async_abstract;
 mod  stream_f_seq;
+mod pintype_unpintrait;
 fn main() {
 
     // let url = "https://api.coindesk.com/v1/bpi/currentprice.json";
@@ -20,7 +21,8 @@ fn main() {
 // sending_data::sendmultiple_better_flow();
 // yielding_runtime::yielding_control_now();
 // build_async_abstract::async_abs();
-stream_f_seq::stream_iter();
+// stream_f_seq::stream_iter();
+pintype_unpintrait::sendmultiple_better_flow();
 
 
 
