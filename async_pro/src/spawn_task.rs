@@ -1,4 +1,8 @@
 use std::time::Duration;
+
+//A task is similar to a thread, but instead of being managed by the operating system, it’s managed by library-level code: the runtime.
+//In that regard, tasks are similar to lightweight, runtime-managed threads with added capabilities that come from being managed by a runtime instead of by the operating system.
+
 pub fn spawn_main() {
     trpl::block_on(async {
         let s_j = trpl::spawn_task(async {
