@@ -57,3 +57,40 @@ Here is an example using ranges of char values:
         3 => println!("three"),
         _ => println!("anything"),
     }
+
+    Structs and Tuples
+We can mix, match, and nest destructuring patterns in even more complex ways. The following example shows a complicated destructure where we nest structs and tuples inside a tuple and destructure all the primitive values out:
+
+    let ((feet, inches), Point { x, y }) = ((3, 10), Point { x: 3, y: -10 });
+    
+    We can also use underscores in multiple places within one pattern to ignore particular values. Listing 19-19 shows an example of ignoring the second and fourth values in a tuple of five items.
+
+    let numbers = (2, 4, 8, 16, 32);
+
+    match numbers {
+        (first, _, third, _, fifth) => {
+            println!("Some numbers: {first}, {third}, {fifth}");
+        }
+    }
+However, using .. must be unambiguous. If it is unclear which values are intended for matching and which should be ignored, Rust will give us an error. Listing 19-25 shows an example of using .. ambiguously, so it will not compile.
+
+Filename: src/main.rs
+This code does not compile!
+fn main() {
+    let numbers = (2, 4, 8, 16, 32);
+
+    match numbers {
+        (.., second, ..) => {
+            println!("Some numbers: {second}")
+        },
+    }
+}
+Listing 19-25: An attempt to use .. in an ambiguous way
+When we compile this example, we get this error:
+
+$ cargo run
+   Compiling patterns v0.1.0 (file:///projects/patterns)
+error: `..` can only be used once per tuple pattern
+
+Summary
+Rust’s patterns are very useful in distinguishing between different kinds of data. When used in match expressions, Rust ensures that your patterns cover every possible value, or your program won’t compile. Patterns in let statements and function parameters make those constructs more useful, enabling the destructuring of values into smaller parts and assigning those parts to variables. We can create simple or complex patterns to suit our needs.

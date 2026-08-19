@@ -29,10 +29,17 @@ pub fn pattern_main() {
     let p = Point { x: 0, y: 7 };
 
     match p {
-        Point { x, y: 7 } => println!("On the x axis at {x}"),
+        Point { x, y: 0 } => println!("On the x axis at {x}"),
         Point { x: 0, y } => println!("On the y axis at {y}"),
         Point { x, y } => {
             println!("On neither axis: ({x}, {y})");
         }
     }
+    //Structs and Tuples
+    
+     let ((feet, inches), Point { x, y }) = ((3, 10), Point { x: 3, y: -10 });
+     println!("{feet}");
+     
+     println!("print struct {x}" )
+
 }
