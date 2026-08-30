@@ -6,3 +6,18 @@ pub trait Iterator {
 
     fn next(&mut self) -> Option<Self::Item>;
 }
+This syntax seems comparable to that of generics. So, why not just define the Iterator trait with generics, as shown in Listing 20-14?
+
+pub trait Iterator<T> {
+    fn next(&mut self) -> Option<T>;
+}
+The difference is that when using generics, as in Listing 20-14, we must annotate the types in each implementation; because we can also implement Iterator<String> for Counter or any other type, we could have multiple implementations of Iterator for Counter.
+
+Using Default Generic Parameters and Operator Overloading
+
+A great example of a situation where this technique is useful is with operator overloading, in which you customize the behavior of an operator (such as +) in particular situations.
+
+Rust doesn’t allow you to create your own operators or overload arbitrary operators. But you can overload the operations and corresponding traits listed in std::ops by implementing the traits associated with the operator. For example, in Listing 20-15, we overload the + operator to add two Point instances together. We do this by implementing the Add trait on a Point struct.
+
+Using Supertraits
+Sometimes you might write a trait definition that depends on another trait: For a type to implement the first trait, you want to require that type to also implement the second trait. You would do this so that your trait definition can make use of the associated items of the second trait. The trait your trait definition is relying on is called a supertrait of your trait.
