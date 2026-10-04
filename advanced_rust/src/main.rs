@@ -10,6 +10,7 @@ mod identical_methods;
 mod super_trait;
 mod advance_type;
 mod adv_fn_closures;
+mod hello_macro;
 
 fn main() {
     
@@ -24,7 +25,10 @@ fn main() {
   // animals::specific_animal();
   // super_trait::printer();
   // advance_type::synonyms_alias();
-  adv_fn_closures::advanced_fn();
+//   adv_fn_closures::advanced_fn();
+//   adv_fn_closures::example4();
+//    adv_fn_closures::example2();
+hello_macro::macro_main();
  
 
 }
